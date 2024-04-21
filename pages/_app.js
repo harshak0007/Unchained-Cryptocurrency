@@ -1,7 +1,12 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
-}
+import { ERC20Provider } from "../context/unchainedToken";
+import Navbar from "../components/Navbar/Navbar";
+const MyApp = ({ Component, pageProps }) => (
+  <ERC20Provider>
+    <Navbar></Navbar>
+    <Component {...pageProps} />
+  </ERC20Provider>
+);
 
-export default MyApp
+export default MyApp;
